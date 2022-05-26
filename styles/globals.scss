@@ -1,0 +1,23 @@
+@use "ds";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Roboto;
+  background-color: ds.$off_white1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.divider{
+  height: 0px;
+  border: 1px dashed #27345C;
+}

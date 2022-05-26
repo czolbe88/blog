@@ -1,17 +1,25 @@
 // components/layout.js
 
-import React from "react";
-import Header from "./header/header";
+import React, {PropsWithChildren} from "react";
+import Styles from "./layout.module.scss";
+import styles from "./header/header.module.scss";
+import Routes from "./routes/routes";
 
-type layoutProps = {
-    children: React.ReactNode
-}
 
-export default function Layout({children}: layoutProps) {
+export default function Layout(props: PropsWithChildren<any>) {
     return (
-        <React.Fragment>
-            <Header />
-            <main>{children}</main>
-        </React.Fragment>
+            <div className={Styles.layoutRoot}>
+
+                <div className={styles.header}>
+                    <Routes/>
+                </div>
+
+                <div className={Styles.bodyRoot}>
+                    <main>
+                        {props.children}
+                    </main>
+                </div>
+
+            </div>
     )
 }

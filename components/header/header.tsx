@@ -1,10 +1,18 @@
 import React from "react";
 import styles from "./header.module.scss";
+import Link from "next/link";
+import Routes from "../routes/routes";
 
-export default function Header(){
-    return(
+
+
+
+//not in use
+const Header = () => {
+    return (
         <div className={styles.header}>
-            I am the header
+            <Routes/>
         </div>
     )
 }
+
+export default Header;

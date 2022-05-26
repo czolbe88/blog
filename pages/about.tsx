@@ -1,3 +1,11 @@
+import React from "react";
+import TitleRow from "../components/titlerow/titlerow";
+
 export default function About() {
-    return <h1>First Post</h1>;
+    return (
+        <div>
+            <TitleRow text={"About"}/>
+            <hr className={"divider"}/>
+        </div>
+    )
 }
