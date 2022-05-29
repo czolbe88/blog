@@ -2,7 +2,6 @@
 
 import React, {PropsWithChildren} from "react";
 import Styles from "./layout.module.scss";
-import styles from "./header/header.module.scss";
 import Routes from "./routes/routes";
 
 
@@ -10,7 +9,7 @@ export default function Layout(props: PropsWithChildren<any>) {
     return (
             <div className={Styles.layoutRoot}>
 
-                <div className={styles.header}>
+                <div className={Styles.header}>
                     <Routes/>
                 </div>
 

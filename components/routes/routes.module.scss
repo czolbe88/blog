@@ -1,0 +1,21 @@
+.routes {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+
+  h4 {
+    margin-right: 10px;
+
+    &:after {
+      margin-left: 10px;
+      content: "/";
+    }
+
+    &:last-child:after {
+      margin: 0;
+      content: "";
+    }
+  }
+
+
+}
