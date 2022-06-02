@@ -5,9 +5,8 @@ const Home: NextPage = () => {
         // <Layout>
         <div>
             <h1>
-                testing
+                Under Construction
             </h1>
-
         </div>
         // </Layout>
 
