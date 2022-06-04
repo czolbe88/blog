@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Deploy Blog
 on:
   push:
     branches:
@@ -9,7 +9,7 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  publish-image-to-registry:
+  publish-image:
     runs-on: ubuntu-latest
     steps:
 
@@ -38,9 +38,12 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   deployment:
+    needs: publish-image
     runs-on: self-hosted
     steps:
+      - name: Stop container
+        run: docker container stop blog
       - name: Log in to container repository
         run: docker login ghcr.io --username czolbe88 -p ${{ secrets.GIT_TOKEN }}
       - name: start container
-        run: docker container run -p 3000:3000 ghcr.io/czolbe88/blog:main
+        run: docker container run -d -p 3000:3000 --name blog ghcr.io/czolbe88/blog:main
