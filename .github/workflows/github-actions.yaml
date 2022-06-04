@@ -40,12 +40,7 @@ jobs:
   deployment:
     runs-on: self-hosted
     steps:
-      - name: Dump GitHub context
-        id: github_context_step
-        run: echo '${{ toJSON(github) }}'
-      - name: Dump secret context
-        run: echo '${{ toJSON(secrets) }}'
-      - name: Dump env context
-        run: echo '${{ toJSON(env) }}'
       - name: Log in to container repository
         run: docker login ghcr.io --username czolbe88 -p ${{ secrets.GIT_TOKEN }}
+      - name: start container
+        run: docker run ghcr.io/czolbe88/blog:main -p 3000:3000
