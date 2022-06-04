@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: Build and Push Docker Image
 on:
   push:
     branches:
@@ -25,12 +25,12 @@ jobs:
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
-        uses: docker/metadata-action@V2
+        uses: docker/metadata-action@v2
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@V2
+        uses: docker/build-push-action@v2
         with:
           context: .
           push: true
