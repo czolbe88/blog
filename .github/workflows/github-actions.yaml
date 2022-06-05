@@ -42,7 +42,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Stop container
-        run: docker ps -q --filter ancestor="ghcr.io/czolbe88/blog:main" | xargs docker container stop
+        run: docker ps -q --filter ancestor="ghcr.io/czolbe88/blog:main" | xargs docker container rm -f
       - name: Log in to container repository
         run: docker login ghcr.io --username czolbe88 -p ${{ secrets.GIT_TOKEN }}
       - name: start container
