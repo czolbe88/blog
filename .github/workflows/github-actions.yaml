@@ -41,6 +41,8 @@ jobs:
     needs: publish-image
     runs-on: self-hosted
     steps:
+      - name: pull latest image
+        run: docker pull ghcr.io/czolbe88/blog:main
       - name: Stop container
         run: docker ps -q --filter ancestor="ghcr.io/czolbe88/blog:main" | xargs docker container rm -f
       - name: Log in to container repository
