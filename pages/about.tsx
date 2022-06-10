@@ -19,7 +19,7 @@ export default function About() {
                     </Typography>
 
                     <Typography variant={"body1"}>
-                        I r programmer. beep boop.
+                        I are programmer. beep boop.
                     </Typography>
                 </div>
 
