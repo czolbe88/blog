@@ -1,38 +1,52 @@
 @use '../styles/ds';
 
-.layoutRoot{
+.layoutRoot {
 
   height: 100vh;
-  
-  .header{
+
+  .header {
+
+    @media (max-width: ds.$media_transition) {
+      padding: 20px;
+      width: fit-content;
+    }
+
+    @media (min-width: ds.$media_transition) {
+      padding: 20px 100px;
+      justify-content: flex-end;
+    }
+
     display: flex;
-    justify-content: end;
     align-items: center;
-    height: 130px;
-    padding: 20px 100px;
+    height: 70px;
     background-color: ds.$off_white2;
   }
 
-  .bodyRoot{
-    padding: 20px 100px;
-    height: calc(100% - 160px);
+  .bodyRoot {
+    @media (max-width: ds.$media_transition) {
+      padding: 20px;
+    }
+
+    @media (min-width: ds.$media_transition) {
+      padding: 20px 100px;
+    }
+    height: calc(100% - 100px);
   }
 
-  .footerRoot{
-    padding: 0 100px;
+  .footerRoot {
+
     display: flex;
-    height: 30px;
     justify-content: center;
     grid-gap: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    align-items: center;
 
-    //.socialMedia{
-    //  display: flex;
-    //  grid-gap: 10px;
-    //}
+    @media (max-width: ds.$media_transition) {
+      display: none;
+    }
 
   }
 
-
 }
-
-

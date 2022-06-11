@@ -17,9 +17,7 @@ export default function Layout(props: PropsWithChildren<any>) {
                 </div>
 
                 <div className={Styles.bodyRoot}>
-                    <main>
                         {props.children}
-                    </main>
                 </div>
 
                 <div className={Styles.footerRoot}>

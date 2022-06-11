@@ -1,20 +1,18 @@
 .aboutContent{
   display: flex;
-  flex-direction: row;
+  flex-flow: wrap row;
   margin-top: 20px;
   gap: 40px;
 
   #profilePic{
     height: auto;
     width: 300px;
-
   }
 
   .aboutWriteup{
     p{
       margin-top: 20px;
     }
-
   }
 
 }
