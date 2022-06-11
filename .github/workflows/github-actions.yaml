@@ -6,7 +6,10 @@ on:
 
 env:
   REGISTRY: ghcr.io
+  SECRETS_FILEPATH: ./secrets/google-svc-account-secrets.json
   IMAGE_NAME: ${{ github.repository }}
+  CLIENT_EMAIL: ${{ secrets.GOOGLE_SVC_ACCOUNT_CLIENT_EMAIL }}
+  PRIVATE_KEY: ${{ secrets.GOOGLE_SVC_ACCOUNT_PRIVATE_KEY }}
 
 jobs:
   publish-image:
@@ -30,14 +33,13 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       - name: Create secrets file for google svc account secrets
-        env:
-          CLIENT_EMAIL: ${{ secrets.GOOGLE_SVC_ACCOUNT_CLIENT_EMAIL }}
-          PRIVATE_KEY: ${{ secrets.GOOGLE_SVC_ACCOUNT_PRIVATE_KEY }}
         run: |
           mkdir secrets
-          touch ./secrets/google-svc-account-secrets.json
-          echo client_email="$CLIENT_EMAIL" >>./secrets/google-svc-account-secrets.json
-          echo private_key="$PRIVATE_KEY" >>./secrets/google-svc-account-secrets.json
+          touch ${{ env.SECRETS_FILEPATH }}
+          echo { >> ${{ env.SECRETS_FILEPATH }}
+          echo client_email="$CLIENT_EMAIL" >> ${{ env.SECRETS_FILEPATH }}
+          echo private_key="$PRIVATE_KEY" >> ${{ env.SECRETS_FILEPATH }}
+          echo } >> ${{ env.SECRETS_FILEPATH }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
