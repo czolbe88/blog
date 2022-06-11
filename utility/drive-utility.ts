@@ -1,5 +1,5 @@
 import {GoogleAuth} from "google-auth-library";
-import googleServiceAccountKey from "../secrets/blog-image-host-1654871978093-a009b961b6a0.json";
+import googleServiceAccountKey from "../secrets/google-svc-account-secrets.json";
 import {google} from "googleapis";
 
 const credentials = {
