@@ -41,10 +41,8 @@ export default function Illustrations() {
                     images.map((image: ImageObj) => {
                         return (
                             <React.Fragment>
-                                <IllustrationCard name={image.name} description={image.description} imageUrl={image.url}/>
-                                <IllustrationCard name={image.name} description={image.description} imageUrl={image.url}/>
+                                <IllustrationCard key={image.name} name={image.name} description={image.description} imageUrl={image.url}/>
                             </React.Fragment>
-
                         )
                     })
                 }
