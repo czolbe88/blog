@@ -39,12 +39,19 @@
     justify-content: center;
     grid-gap: 10px;
     position: fixed;
-    bottom: 0;
+    bottom: 10px;
     width: 100%;
     align-items: center;
 
     @media (max-width: ds.$media_transition) {
       display: none;
+    }
+    a,svg{
+      cursor: pointer
+    }
+
+    a{
+      display: flex;
     }
 
   }

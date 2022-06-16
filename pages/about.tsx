@@ -1,14 +1,11 @@
 import React from "react";
-import TitleRow from "../components/titlerow/titlerow";
 import Styles from "./about.module.scss";
 import {Typography} from "@mui/material";
+import MainSection from "../components/main/mainsection";
 
 export default function About() {
     return (
-        <div>
-            <TitleRow text={"About"}/>
-            <hr className={"divider"}/>
-
+        <MainSection title={"About"}>
 
             <div className={Styles.aboutContent}>
                 <img id={Styles.profilePic} src="./images/about.jpg"/>
@@ -19,14 +16,11 @@ export default function About() {
                     </Typography>
 
                     <Typography variant={"body1"}>
-                        I are programmer. beep boop.
+                        A software developer's blog. It is under construction 🚧 and there is nothing much to see here at the moment. Have you met my human?
                     </Typography>
                 </div>
 
-
             </div>
-
-
-        </div>
+        </MainSection>
     )
 }
