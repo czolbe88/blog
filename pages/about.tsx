@@ -16,7 +16,7 @@ export default function About() {
                     </Typography>
 
                     <Typography variant={"body1"}>
-                        A software developer's blog. It is under construction 🚧 and there is nothing much to see here at the moment. Have you met my human?
+                        {"A software developer's blog. It is under construction 🚧 and there is nothing much to see here at the moment. Have you met my human?"}
                     </Typography>
                 </div>
 
