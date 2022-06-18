@@ -7,10 +7,9 @@ tasks:
           mkdir secrets
           touch ./secrets/google-svc-account-secrets.json
           echo { >> ./secrets/google-svc-account-secrets.json
-          echo \"client_email\": \"$CLIENT_EMAIL\" >> ./secrets/google-svc-account-secrets.json
+          echo \"client_email\": \"$GOOGLE_SVC_ACCOUNT_CLIENT_EMAIL\" >> ./secrets/google-svc-account-secrets.json
           echo , >> ./secrets/google-svc-account-secrets.json
-          echo \"private_key\": \"$PRIVATE_KEY\" >> ./secrets/google-svc-account-secrets.json
+          echo \"private_key\": \"$GOOGLE_SVC_ACCOUNT_PRIVATE_KEY\" >> ./secrets/google-svc-account-secrets.json
           echo } >> ./secrets/google-svc-account-secrets.json
   - init: npm install
     command: npm run dev
-
