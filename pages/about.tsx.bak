@@ -8,7 +8,7 @@ export default function About() {
         <MainSection title={"About"}>
 
             <div className={Styles.aboutContent}>
-                <img id={Styles.profilePic} src="./images/about.jpg"/>
+                {/*<img id={Styles.profilePic} src="./images/about.jpg"/>*/}
 
                 <div className={Styles.aboutWriteup}>
                     <Typography variant={"h3"}>
@@ -16,7 +16,7 @@ export default function About() {
                     </Typography>
 
                     <Typography variant={"body1"}>
-                        {"A software developer's blog. It is under construction 🚧 and there is nothing much to see here at the moment. Have you met my human?"}
+                        {"A Software developer."}
                     </Typography>
                 </div>
 
