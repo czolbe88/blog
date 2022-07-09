@@ -26,16 +26,23 @@ export default async function handler(
         const fields =  'nextPageToken, files(id, name, description, thumbnailLink)';
 
         const files = await driveService.files.list({
-            q: '\'1YxSuLxiqc116cNbysDJoWDOizQwejmvE\' in parents',
+            q: '\'1V2lxbarPyuvZRj2Ri6tg-YuhyfBCioCi\' in parents',
             fields,
             spaces: 'drive',
         });
+
+        // const pngResult = await driveService.files.list({
+        //     q: 'mimeType=\'image/png\'',
+        //     fields,
+        //     spaces: 'drive',
+        // });
 
         let photos: any[] = files.data.files as any[];
         (photos as any[]).forEach( photo => {
             photo.url = photo?.thumbnailLink.replace("=s220", "")
         })
 
+        // console.log({photos});
 
         res.status(200).json(photos);
 

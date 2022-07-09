@@ -11,12 +11,12 @@ interface ImageObj {
     url: string
 }
 
-export default function Illustrations() {
+export default function Photography() {
 
     const [images, setImages] = useState<ImageObj[]>([])
 
     useEffect(() => {
-        fetch("api/listIllustrations")
+        fetch("api/listPhotos")
             .then((res) => {
                 res.json().then(
                     (data) => {
@@ -28,7 +28,7 @@ export default function Illustrations() {
     }, [])
 
     return (
-        <MainSection title={"Illustrations"}>
+        <MainSection title={"Photography"}>
             <div className={Styles.illustrationContainer}>
                 {
                     images.map((image: ImageObj) => {
