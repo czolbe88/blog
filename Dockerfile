@@ -1,7 +1,7 @@
 # Dockerfile
 
 # base image
-FROM node:alpine
+FROM node:12.18.2-alpine
 
 # create & set working directory
 RUN mkdir /app
